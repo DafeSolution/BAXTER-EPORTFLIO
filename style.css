@@ -1,0 +1,289 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #003300;
+    padding: 1em 2em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .navbar {
+    background-color: #006400;
+}
+
+.logo-name {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.logo-name img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+}
+
+.logo-name .name {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .logo-name .name {
+    color: #d0ffd0;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 1.5em;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .nav-links li a {
+    color: #d0ffd0;
+}
+
+/* Hamburger Button */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .hamburger {
+    color: #d0ffd0;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #003300;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 200px;
+        padding: 1em 0;
+        transition: background-color 0.3s ease;
+    }
+
+    .nav-links li {
+        padding: 0.5em 1em;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    body.dark-mode .nav-links {
+        background-color: #006400;
+    }
+}
+
+/* Section Styling */
+main section {
+    padding: 2em;
+    margin: 1em auto;
+    max-width: 800px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode main section {
+    background: #1e1e1e;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Section Header */
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: 1em;
+}
+
+.section-header img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.section-header h2 {
+    font-size: 1.8em;
+    color: #003300;
+}
+
+body.dark-mode .section-header h2 {
+    color: #d0ffd0;
+}
+
+/* Content with Images */
+.content-with-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    align-items: center;
+}
+
+.content-with-images img,
+.gallery-item img,
+.extracurricular-media img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Gallery */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: space-between;
+}
+
+.gallery-item {
+    text-align: center;
+    flex: 1 1 calc(50% - 1em); /* Adjust width to maintain consistency */
+}
+
+.gallery-item img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Extracurricular Media */
+.extracurricular-container {
+    display: flex;
+    gap: 2em;
+    align-items: flex-start;
+}
+
+.extracurricular-content {
+    flex: 3;
+}
+
+.extracurricular-media {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.extracurricular-media iframe {
+    width: 100%;
+    height: 200px;
+    border: none;
+}
+
+/* Form Styling */
+form {
+    max-width: 500px;
+    margin: 2em auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input, form textarea, form button {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #003300;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #006400;
+}
+
+/* Footer */
+footer {
+    background-color: #003300;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    margin-top: 2em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode footer {
+    background-color: #006400;
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    position: fixed;
+    top: 1px;
+    right: 20px;
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 1px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode #theme-toggle {
+    background: #fff;
+    color: #333;
+}
